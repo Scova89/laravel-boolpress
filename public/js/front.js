@@ -1970,6 +1970,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header"
 });
@@ -2577,16 +2587,35 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("header", [
+    _c("h2", [_vm._v("Header")]),
+    _vm._v(" "),
+    _c("a", { attrs: { href: "/admin/home" } }, [_vm._v("Area riservata")]),
+    _vm._v(" "),
+    _c("nav", [
+      _c(
+        "li",
+        [
+          _c("router-link", { attrs: { to: { name: "home" } } }, [
+            _vm._v("Home"),
+          ]),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        [
+          _c("router-link", { attrs: { to: { name: "about" } } }, [
+            _vm._v("Chi Siamo"),
+          ]),
+        ],
+        1
+      ),
+    ]),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("header", [_c("h2", [_vm._v("Header")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
