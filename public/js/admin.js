@@ -37346,9 +37346,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Francesco\Desktop\Boolean\Lezione-81_23-02-22_LARAVEL-API\laravel-api\resources\js\admin.js */"./resources/js/admin.js");
-__webpack_require__(/*! C:\Users\Francesco\Desktop\Boolean\Lezione-81_23-02-22_LARAVEL-API\laravel-api\resources\sass\admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! C:\Users\Francesco\Desktop\Boolean\Lezione-81_23-02-22_LARAVEL-API\laravel-api\resources\sass\front.scss */"./resources/sass/front.scss");
+__webpack_require__(/*! C:\Users\Francesco\Desktop\Boolean\Lezione-82_24-02-22_VUE-ROUTER\laravel-boolpress\resources\js\admin.js */"./resources/js/admin.js");
+__webpack_require__(/*! C:\Users\Francesco\Desktop\Boolean\Lezione-82_24-02-22_VUE-ROUTER\laravel-boolpress\resources\sass\admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! C:\Users\Francesco\Desktop\Boolean\Lezione-82_24-02-22_VUE-ROUTER\laravel-boolpress\resources\sass\front.scss */"./resources/sass/front.scss");
 
 
 /***/ })
