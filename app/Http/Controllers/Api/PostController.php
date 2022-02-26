@@ -13,4 +13,9 @@ class PostController extends Controller
         $posts = Post::where("published", true)->with("category")->get();
         return response()->json($posts);
     }
+
+    public function show($slug){
+        $posts = Post::where("slug", $slug)->with("category")->get();
+        return response()->json($posts);
+    }
 }

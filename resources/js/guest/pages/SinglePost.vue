@@ -14,7 +14,7 @@ export default {
     },
     created(){
        // console.log(this.$route.params.slug);
-       axios.get(`/api/posts/${this.route.params.slug}`)
+       axios.get(`/api/posts/${this.$route.params.slug}`)
         .then((response) => {
             console.log(response.data);
         })

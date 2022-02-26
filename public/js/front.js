@@ -2131,7 +2131,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     // console.log(this.$route.params.slug);
-    axios.get("/api/posts/".concat(this.route.params.slug)).then(function (response) {
+    axios.get("/api/posts/".concat(this.$route.params.slug)).then(function (response) {
       console.log(response.data);
     });
   }
