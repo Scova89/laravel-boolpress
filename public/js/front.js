@@ -2038,6 +2038,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Posts",
   data: function data() {
@@ -2122,6 +2123,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SinglePost",
   data: function data() {
@@ -2130,9 +2132,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
+    var _this = this;
+
     // console.log(this.$route.params.slug);
     axios.get("/api/posts/".concat(this.$route.params.slug)).then(function (response) {
-      console.log(response.data);
+      _this.post = response.data;
     });
   }
 });
@@ -2761,38 +2765,53 @@ var render = function () {
     _c(
       "ul",
       _vm._l(_vm.posts, function (post) {
-        return _c("li", { key: post.id }, [
-          _c("h3", [_vm._v(_vm._s(post.title))]),
-          _vm._v(" "),
-          post.category
-            ? _c("p", [
-                _c("strong", [_vm._v("Categoria:")]),
-                _vm._v(" " + _vm._s(post.category.name)),
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          post.tags > 0
-            ? _c("div", [
-                _c("strong", [_vm._v("Tags:")]),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  _vm._l(post.tags, function (tag) {
-                    return _c("li", { key: tag.id }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(tag.name) +
-                          "\n                    "
-                      ),
-                    ])
-                  }),
-                  0
-                ),
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(post.content))]),
-        ])
+        return _c(
+          "li",
+          { key: post.id },
+          [
+            _c("h3", [_vm._v(_vm._s(post.title))]),
+            _vm._v(" "),
+            post.category
+              ? _c("p", [
+                  _c("strong", [_vm._v("Categoria:")]),
+                  _vm._v(" " + _vm._s(post.category.name)),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            post.tags > 0
+              ? _c("div", [
+                  _c("strong", [_vm._v("Tags:")]),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    _vm._l(post.tags, function (tag) {
+                      return _c("li", { key: tag.id }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(tag.name) +
+                            "\n                    "
+                        ),
+                      ])
+                    }),
+                    0
+                  ),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(post.content))]),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                attrs: {
+                  to: { name: "single-post", params: { slug: post.slug } },
+                },
+              },
+              [_vm._v("Visualizza post")]
+            ),
+          ],
+          1
+        )
       }),
       0
     ),
@@ -2887,7 +2906,11 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("h2", [_vm._v(_vm._s(_vm.$route.params.slug))])])
+  return _c("div", [
+    _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
+    _vm._v(" "),
+    _c("p", [_vm._v(_vm._s(_vm.post.content))]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

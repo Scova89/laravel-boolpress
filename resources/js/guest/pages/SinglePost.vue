@@ -1,6 +1,7 @@
 <template>
   <div>
-      <h2>{{$route.params.slug}}</h2>
+      <h1>{{post.title}}</h1>
+      <p>{{post.content}}</p>
   </div>
 </template>
 
@@ -16,7 +17,7 @@ export default {
        // console.log(this.$route.params.slug);
        axios.get(`/api/posts/${this.$route.params.slug}`)
         .then((response) => {
-            console.log(response.data);
+            this.post = response.data;
         })
     }
 }

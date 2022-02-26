@@ -10,12 +10,12 @@ class PostController extends Controller
 {
     
     public function index(){
-        $posts = Post::where("published", true)->with("category")->get();
+        $posts = Post::where("published", true)->with(["category"])->get();
         return response()->json($posts);
     }
 
     public function show($slug){
-        $posts = Post::where("slug", $slug)->with("category")->get();
-        return response()->json($posts);
+        $post = Post::where("slug", $slug)->with(["category"])->first();
+        return response()->json($post);
     }
 }
