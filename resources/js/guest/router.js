@@ -30,6 +30,12 @@ const router = new VueRouter({
             name: "single-post",
             component: SinglePost
         },
+
+        {
+            path: '*',
+            name: "page-404",
+            component: PageNotFound
+        }
     ]
 });
 
