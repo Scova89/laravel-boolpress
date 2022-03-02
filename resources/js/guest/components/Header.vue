@@ -10,6 +10,9 @@
             <li>
                 <router-link :to="{ name: 'about' }">Chi Siamo</router-link>
             </li>
+            <li>
+                <router-link :to="{ name: 'categories' }">Categorie</router-link>
+            </li>
         </nav>
     </header>
 </template>
