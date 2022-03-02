@@ -2156,6 +2156,10 @@ __webpack_require__.r(__webpack_exports__);
     // console.log(this.$route.params.slug);
     axios.get("/api/posts/".concat(this.$route.params.slug)).then(function (response) {
       _this.post = response.data;
+    })["catch"](function (error) {
+      _this.$router.push({
+        name: "page-404"
+      });
     });
   }
 });
