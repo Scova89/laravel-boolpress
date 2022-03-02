@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <h1>{{category.name}}</h1>
+        <ul>
+            <li>Post associati</li>
+        </ul>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "SingleCategory",
+    data(){
+        return{
+            category: {}
+        }
+    },
+    created(){
+        axios.get(`/api/categories/${this.$route.params.slug}`)
+            .then((response) => {
+                this.category = response.data;
+            })
+            .catch(() => {
+                this.router.push({name: 'page-404'});
+            });
+    }
+}
+</script>
+
+<style>
+
+</style>
