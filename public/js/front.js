@@ -2096,6 +2096,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Categories",
   data: function data() {
@@ -2945,7 +2953,28 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Le categorie")])
+  return _c("div", [
+    _c("h1", [_vm._v("Le categorie")]),
+    _vm._v(" "),
+    _c(
+      "ul",
+      _vm._l(_vm.categories, function (category) {
+        return _c(
+          "li",
+          { key: category.id },
+          [
+            _c(
+              "router-link",
+              { attrs: { to: { name: "single-category", params: {} } } },
+              [_vm._v(_vm._s(category.name))]
+            ),
+          ],
+          1
+        )
+      }),
+      0
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19035,6 +19064,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/guest/pages/SingleCategory.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/guest/pages/SingleCategory.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/guest/pages/SingleCategory.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/guest/pages/SinglePost.vue":
 /*!*************************************************!*\
   !*** ./resources/js/guest/pages/SinglePost.vue ***!
@@ -19119,12 +19180,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/guest/pages/Home.vue");
 /* harmony import */ var _pages_About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/About */ "./resources/js/guest/pages/About.vue");
 /* harmony import */ var _pages_SinglePost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/SinglePost */ "./resources/js/guest/pages/SinglePost.vue");
-/* harmony import */ var _pages_PageNotFound__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/PageNotFound */ "./resources/js/guest/pages/PageNotFound.vue");
-/* harmony import */ var _pages_Categories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Categories */ "./resources/js/guest/pages/Categories.vue");
+/* harmony import */ var _pages_SingleCategory__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/SingleCategory */ "./resources/js/guest/pages/SingleCategory.vue");
+/* harmony import */ var _pages_PageNotFound__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/PageNotFound */ "./resources/js/guest/pages/PageNotFound.vue");
+/* harmony import */ var _pages_Categories__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/Categories */ "./resources/js/guest/pages/Categories.vue");
 // resources/js/router.js
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
 
 
 
@@ -19147,11 +19210,15 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }, {
     path: "/categorie",
     name: "categories",
-    component: _pages_Categories__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _pages_Categories__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }, {
+    path: "/categorie/:slug",
+    name: "single-category",
+    component: _pages_SingleCategory__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
     path: '*',
     name: "page-404",
-    component: _pages_PageNotFound__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _pages_PageNotFound__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);

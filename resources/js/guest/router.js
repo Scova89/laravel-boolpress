@@ -8,6 +8,7 @@ Vue.use(VueRouter);
 import Home from "./pages/Home";
 import About from "./pages/About";
 import SinglePost from "./pages/SinglePost";
+import SingleCategory from "./pages/SingleCategory";
 import PageNotFound from "./pages/PageNotFound";
 import Categories from "./pages/Categories";
 
@@ -39,6 +40,12 @@ const router = new VueRouter({
             path: "/categorie",
             name: "categories",
             component: Categories
+        },
+
+        {
+            path: "/categorie/:slug",
+            name: "single-category",
+            component: SingleCategory
         },
 
         {
