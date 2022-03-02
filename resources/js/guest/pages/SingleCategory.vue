@@ -1,8 +1,8 @@
 <template>
     <div>
         <h1>{{category.name}}</h1>
-        <ul>
-            <li>Post associati</li>
+        <ul v-if="category.posts.length > 0">
+            <li v-for="post in category.posts" :key="post.id">{{post.title}}</li>
         </ul>
     </div>
 </template>

@@ -3100,17 +3100,18 @@ var render = function () {
   return _c("div", [
     _c("h1", [_vm._v(_vm._s(_vm.category.name))]),
     _vm._v(" "),
-    _vm._m(0),
+    _vm.category.posts.length > 0
+      ? _c(
+          "ul",
+          _vm._l(_vm.category.posts, function (post) {
+            return _c("li", { key: post.id }, [_vm._v(_vm._s(post.title))])
+          }),
+          0
+        )
+      : _vm._e(),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", [_c("li", [_vm._v("Post associati")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
