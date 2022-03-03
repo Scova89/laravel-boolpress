@@ -2,8 +2,11 @@
     <div>
         <h1>{{category.name}}</h1>
         <ul v-if="category.posts.length > 0">
-            <li v-for="post in category.posts" :key="post.id">{{post.title}}</li>
+            <li v-for="post in category.posts" :key="post.id">
+                <router-link :to="{name:'single-post', params: {slug: post.slug}}">{{post.title}}</router-link>
+            </li>
         </ul>
+        <p v-else>Nessun post associato a questa categoria</p>
     </div>
 </template>
 
